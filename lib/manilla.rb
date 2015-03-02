@@ -1,4 +1,4 @@
-require "manilla/version"
+require 'manilla/version'
 
 module Manilla
   # Your code goes here...
