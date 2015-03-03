@@ -15,7 +15,7 @@ to this:
 ```ruby
 Manilla.fold('Hello, world!', 8, "\r\n\s", :word)
 # => Hello,
-      world!
+#     world!
 ```
 
 and back again:
@@ -54,7 +54,7 @@ folding is the default folding method.
 ```ruby
 Manilla.fold('Hello, world!', 8, "\r\n\s")
 # => Hello, w
-      orld!
+#     orld!
 ```
 
 ### Word Folding
@@ -64,7 +64,7 @@ Word folding will cause Manilla to break text at word boundaries.
 ```ruby
 Manilla.fold('Hello, world!', 8, "\r\n\s", :word)
 # => Hello,
-      world!
+#     world!
 ```
 
 If a word is longer than the specified max width it will be folded at max width.
@@ -72,12 +72,12 @@ If a word is longer than the specified max width it will be folded at max width.
 ```ruby
 Manilla.fold('Hello, world!', 2, "\r\n\s", :word)
 # => He
-      ll
-      o,
-
-      wo
-      rl
-      d!
+#     ll
+#     o,
+#
+#     wo
+#     rl
+#     d!
 ```
 
 ### Unfolding
