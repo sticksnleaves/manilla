@@ -1,4 +1,5 @@
 require 'manilla/folder'
+require 'manilla/unfolder'
 
 require 'manilla/version'
 
@@ -26,5 +27,9 @@ module Manilla
   #
   def self.fold(text, maxwidth, delimiter, break_on = :char)
     Manilla::Folder.call(text, maxwidth, delimiter, break_on)
+  end
+
+  def self.unfold(text, delimiter)
+    Manilla::Unfolder.call(text, delimiter)
   end
 end
