@@ -10,7 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['anthony@sticksnleaves.com']
 
   spec.summary       = 'Keep your text nice and tidy'
-  spec.description   = 'Break up long text'
+  spec.description   = 'Break long logical lines of text into multiple
+                        delimited representations'
   spec.homepage      = 'https://github.com/sticksnleaves/manilla.git'
   spec.license       = 'MIT'
 
