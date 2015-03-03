@@ -10,3 +10,4 @@
 .rbenv*
 .rvmrc
 .gems
+.ruby-version
