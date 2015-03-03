@@ -16,7 +16,7 @@ describe Manilla::Unfolder do
     immediately followed by a single linear white space character (i.e.,
     SPACE, US-ASCII decimal 32 or HTAB, US-ASCII decimal 9). Any sequence of
     CRLF followed immediately by a single linear white space character is
-    ignored (i.e., removed) when processing the content type.'
+    ignored (i.e., removed) when processing the content type.'.encode('utf-8')
 
     folded_text = Manilla.fold(text, 2, "\r\n")
     unfolded_text = Manilla.unfold(folded_text, "\r\n")

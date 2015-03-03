@@ -8,7 +8,6 @@ module Manilla
       lines = []
 
       value = text.strip
-      value = value.encode('utf-8', 'binary', invalid: :replace, undef: :replace, replace: '')
       value = value.gsub(/\n+/, '')
       value = value.gsub(/\s{2,}/, '')
 
