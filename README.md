@@ -1,8 +1,29 @@
 # Manilla
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/manilla`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://travis-ci.org/sticksnleaves/manilla.svg?branch=master)](https://travis-ci.org/sticksnleaves/manilla)
 
-TODO: Delete this and the text above, and describe your gem
+Text folding for the Rubyist
+
+Go from this:
+
+```
+Hello, world!
+```
+
+to this:
+
+```ruby
+Manilla.fold('Hello, world!', 8, "\r\n\s", :word)
+# => Hello,
+      world!
+```
+
+and back again:
+
+```ruby
+Manilla.unfold("Hello,\r\n world!", "\r\n\s")
+# => Hello, world!
+```
 
 ## Installation
 
@@ -22,7 +43,65 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Manilla provides two methods for folding text: **character** and **word**
+
+### Character Folding
+
+Folding on character will instruct Manilla to insert a fold at a specific width.
+It will not pay attention to word boundaries or any other delimiter. Character
+folding is the default folding method.
+
+```ruby
+Manilla.fold('Hello, world!', 8, "\r\n\s")
+# => Hello, w
+      orld!
+```
+
+### Word Folding
+
+Word folding will cause Manilla to break text at word boundaries.
+
+```ruby
+Manilla.fold('Hello, world!', 8, "\r\n\s", :word)
+# => Hello,
+      world!
+```
+
+If a word is longer than the specified max width it will be folded at max width.
+
+```ruby
+Manilla.fold('Hello, world!', 2, "\r\n\s", :word)
+# => He
+      ll
+      o,
+
+      wo
+      rl
+      d!
+```
+
+### Unfolding
+
+Unfolding is the process of reversing a fold. It will treat delimiters as blank
+strings.
+
+```ruby
+folded_text = Manilla.fold('Hello, world!', 8, "\r\n\s", :word)
+
+Manilla.unfold(folded_text, "\r\n\s")
+# => Hello, world!
+```
+
+## API
+
+### ```Manilla.fold(text, maxwidth, delimiter, break_on)```
+
+Fold text using the specified delimiter at a maximum width. Folding can occur on
+```:char``` or ```:word```.
+
+### ```Manilla.unfold(text, delimiter)```
+
+Unfold text using a specified delimiter.
 
 ## Development
 
