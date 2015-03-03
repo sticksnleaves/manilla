@@ -11,7 +11,7 @@ module Manilla
       value = value.gsub(/\n+/, '')
       value = value.gsub(/\s{2,}/, '')
 
-      while value.bytesize > maxwidth
+      while value.size > maxwidth
         count = maxwidth
 
         while count
@@ -27,7 +27,7 @@ module Manilla
             count = break_pos || maxwidth
           end
 
-          oct = line.bytesize
+          oct = line.size
 
           if oct > maxwidth
             count -= oct - maxwidth
