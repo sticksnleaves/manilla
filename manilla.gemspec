@@ -10,8 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['anthony@sticksnleaves.com']
 
   spec.summary       = 'Keep your text nice and tidy'
-  spec.description   = 'Break up long text by specifying character or byte
-                        length'
+  spec.description   = 'Break up long text'
   spec.homepage      = 'https://github.com/sticksnleaves/manilla.git'
   spec.license       = 'MIT'
 
@@ -20,11 +19,12 @@ Gem::Specification.new do |spec|
       f.match(/^(test|spec|features)\//)
     end
   )
-  
+
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(/^exe\//) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.8'
   spec.add_development_dependency 'rake',    '~> 10.0'
+  spec.add_development_dependency 'rspec'
 end
