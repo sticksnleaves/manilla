@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/sticksnleaves/manilla.svg?branch=master)](https://travis-ci.org/sticksnleaves/manilla)
 
-Text folding for the Rubyist
-
 Go from this:
 
 ```
@@ -111,7 +109,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/manilla/fork )
+1. Fork it ( https://github.com/sticksnleaves/manilla/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
